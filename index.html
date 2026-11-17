@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkLite | Smart URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="brand">
+            <span class="brand-icon">↗</span>
+            LinkLite
+        </a>
+        <span class="nav-label">SMART URL SHORTENER</span>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <span class="tag">SIMPLE. FAST. SMART.</span>
+            <h1>Shorten your links.<br><span>Expand your reach.</span></h1>
+            <p>Transform long URLs into short, shareable links in seconds.</p>
+        </section>
+
+        <section class="shortener-card">
+            <h2>Create a short link</h2>
+            <p class="card-subtitle">Paste your long URL below to get started.</p>
+
+            <form id="shortenForm">
+                <label for="longUrl">Destination URL</label>
+                <div class="input-wrapper">
+                    <span>🔗</span>
+                    <input
+                        type="text"
+                        id="longUrl"
+                        placeholder="https://example.com/your-long-url"
+                        required
+                    >
+                </div>
+
+                <label for="customAlias">Custom alias (optional)</label>
+                <div class="input-wrapper">
+                    <span>#</span>
+                    <input
+                        type="text"
+                        id="customAlias"
+                        placeholder="my-link"
+                        maxlength="25"
+                    >
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    Generate Short Link <span>→</span>
+                </button>
+            </form>
+
+            <div id="resultBox" class="result-box hidden">
+                <div class="success-heading">✓ Your short link is ready!</div>
+                <div class="result-link">
+                    <span id="shortUrl"></span>
+                    <button id="copyBtn" type="button">Copy</button>
+                </div>
+                <span id="copyMessage"></span>
+            </div>
+
+            <p id="errorMessage" class="error-message"></p>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">🔗</div>
+                <p>Total Links</p>
+                <h2 id="totalLinks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">👆</div>
+                <p>Total Clicks</p>
+                <h2 id="totalClicks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <p>Average Clicks</p>
+                <h2 id="averageClicks">0</h2>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="history-header">
+                <div>
+                    <h2>Your Links</h2>
+                    <p>Manage all your shortened URLs.</p>
+                </div>
+                <button id="clearAllBtn" class="clear-btn" type="button">Clear All</button>
+            </div>
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="search" id="searchInput" placeholder="Search your links...">
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SHORT LINK</th>
+                            <th>ORIGINAL URL</th>
+                            <th>CLICKS</th>
+                            <th>CREATED</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody id="linkTableBody"></tbody>
+                </table>
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                <div>🔗</div>
+                <h3>No links yet</h3>
+                <p>Your shortened links will appear here.</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why LinkLite?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <span>⚡</span>
+                    <h3>Fast & Easy</h3>
+                    <p>Generate short links in just one click.</p>
+                </div>
+                <div class="feature-card">
+                    <span>📊</span>
+                    <h3>Click Tracking</h3>
+                    <p>Monitor how many times your links are opened.</p>
+                </div>
+                <div class="feature-card">
+                    <span>🔒</span>
+                    <h3>Local Storage</h3>
+                    <p>Your link history stays saved in your browser.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="brand footer-brand"><span class="brand-icon">↗</span> LinkLite</div>
+        <p>Making the web simpler, one link at a time.</p>
+        <p class="copyright">© 2026 LinkLite. Built with HTML, CSS & JavaScript.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
